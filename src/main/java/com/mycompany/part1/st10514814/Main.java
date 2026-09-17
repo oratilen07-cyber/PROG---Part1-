@@ -33,5 +33,6 @@ public class Main {
         obj.checkUserName(user);
         obj.checkPaswordComplexity(password);
         obj.checkCellPhoneNumber(cellNumber);
+        obj.registerUser(user, password);
     }
 }

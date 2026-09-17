@@ -80,5 +80,19 @@ public class Login {
         System.out.println(result);
         return checkNumber;
     }
+    public String registerUser(String username, String password) {
 
+        String result;
+
+        if (!checkUserName(username)) {
+            result = "The username is incorrectly formatted\n";
+        } else if (!checkPaswordComplexity(password)) {
+            result = "The password does not meet the complexity requirements\n";
+        } else {
+            result = "The two above conditions have been met, and the user has been registered successfully\n";
+        }
+
+        System.out.println(result);
+        return result;
+    }
 }
