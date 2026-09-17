@@ -44,6 +44,25 @@ public class Login {
         return checkUser;
 
     }
+    
+   public boolean checkPaswordComplexity(String password) {
+
+        String PASSWORD_REGEX = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
+        String result;
+        boolean checkPassword;
+
+        if (password.matches(PASSWORD_REGEX)) {
+            result = "Password successfully captured\n";
+            checkPassword = true;
+        } else {
+            result = "Password not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a speacial character\n";
+            checkPassword = false;
+        } 
+
+        System.out.println(result);
+        return checkPassword;
+    }
+
 
     
 }

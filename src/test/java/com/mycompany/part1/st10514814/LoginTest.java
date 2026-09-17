@@ -73,6 +73,41 @@ public class LoginTest {
         assertFalse(obj.checkUserName(userTest));
     }
 
+    /**
+     * Test of checkPaswordComplexity method, of class Login.
+     */
+    @Test
+    public void testCheckPaswordComplexityCorrect() {
+        String name = "";
+        String surname = "";
+        String user = "";
+        String passwordTest = "Ch&&sec@ke99!";
+        String cellNumber = "";
+
+        Login obj = new Login(name, surname, user, passwordTest, cellNumber);
+        boolean expected = true;
+        boolean actual = obj.checkPaswordComplexity(passwordTest);
+
+        assertEquals(expected, actual);
+        assertTrue(obj.checkPaswordComplexity(passwordTest));
+    }
+
+    @Test
+    public void testCheckPaswordComplexityIncorrect() {
+        String name = "";
+        String surname = "";
+        String user = "";
+        String passwordTest = "password";
+        String cellNumber = "";
+
+        Login obj = new Login(name, surname, user, passwordTest, cellNumber);
+
+        boolean expected = false;
+        boolean actual = obj.checkPaswordComplexity(passwordTest);
+
+        assertEquals(expected, actual);
+        assertFalse(obj.checkPaswordComplexity(passwordTest));
+    }
 
 
 

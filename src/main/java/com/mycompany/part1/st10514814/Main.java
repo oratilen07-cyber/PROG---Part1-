@@ -30,9 +30,8 @@ public class Main {
         String cellNumber = input.nextLine();
 
         Login obj = new Login(name, surname, user, password, cellNumber);
+        obj.checkUserName(user);
+        obj.checkPaswordComplexity(password);
 
-     
-
-       
     }
 }
