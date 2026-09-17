@@ -109,8 +109,41 @@ public class LoginTest {
         assertFalse(obj.checkPaswordComplexity(passwordTest));
     }
 
+    /**
+     * Test of checkCellPhoneNumber method, of class Login.
+     */
+    @Test
+    public void testCheckCellPhoneNumberCorrect() {
+        String name = "";
+        String surname = "";
+        String user = "";
+        String password = "";
+        String cellNumberTest = "+27728614789";
 
+        Login obj = new Login(name, surname, user, password, cellNumberTest);
 
+        boolean expected = true;
+        boolean actual = obj.checkCellPhoneNumber(cellNumberTest);
 
+        assertEquals(expected, actual);
+        assertTrue(obj.checkCellPhoneNumber(cellNumberTest));
+    }
+
+    @Test
+    public void testCheckCellPhoneNumberIncorrect() {
+        String name = "";
+        String surname = "";
+        String user = "";
+        String password = "";
+        String cellNumberTest = "08966553";
+
+        Login obj = new Login(name, surname, user, password, cellNumberTest);
+
+        boolean expected = false;
+        boolean actual = obj.checkCellPhoneNumber(cellNumberTest);
+
+        assertEquals(expected, actual);
+        assertFalse(obj.checkCellPhoneNumber(cellNumberTest));
+    }
 
 }

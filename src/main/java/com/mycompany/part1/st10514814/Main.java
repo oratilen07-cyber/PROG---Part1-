@@ -32,6 +32,6 @@ public class Main {
         Login obj = new Login(name, surname, user, password, cellNumber);
         obj.checkUserName(user);
         obj.checkPaswordComplexity(password);
-
+        obj.checkCellPhoneNumber(cellNumber);
     }
 }

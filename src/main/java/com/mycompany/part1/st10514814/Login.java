@@ -44,8 +44,8 @@ public class Login {
         return checkUser;
 
     }
-    
-   public boolean checkPaswordComplexity(String password) {
+
+    public boolean checkPaswordComplexity(String password) {
 
         String PASSWORD_REGEX = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
         String result;
@@ -57,12 +57,28 @@ public class Login {
         } else {
             result = "Password not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a speacial character\n";
             checkPassword = false;
-        } 
+        }
 
         System.out.println(result);
         return checkPassword;
     }
 
+    public boolean checkCellPhoneNumber(String cellNumber) {
 
-    
+        String CELL_REGEX = "^\\+27[6-8][0-9]{8}$";
+        String result;
+        boolean checkNumber;
+
+        if (cellNumber.matches(CELL_REGEX)) {
+            result = "Cell phone number successfully added\n";
+            checkNumber = true;
+        } else {
+            result = "Cell phone number incorrectly formatted or does not contain internatioal code\n";
+            checkNumber = false;
+        }
+
+        System.out.println(result);
+        return checkNumber;
+    }
+
 }
