@@ -30,9 +30,27 @@ public class Main {
         String cellNumber = input.nextLine();
 
         Login obj = new Login(name, surname, user, password, cellNumber);
-        obj.checkUserName(user);
-        obj.checkPaswordComplexity(password);
-        obj.checkCellPhoneNumber(cellNumber);
+        
         obj.registerUser(user, password);
+
+        String result = obj.registerUser(user, password);
+      
+        String enteredUser;
+        String enteredPass;
+        boolean loginResult;
+
+        if (result.matches("The two above conditions have been met, and the user has been registered successfully\n")) {
+            System.out.println("Enter your username to login");
+            enteredUser = input.nextLine();
+
+            System.out.println("Enter your password to login");
+            enteredPass = input.nextLine();
+            loginResult = obj.loginUser(name, surname, user, password, enteredUser, enteredPass);
+
+            obj.returnLoginStatus(loginResult);
+        } else {
+            loginResult = false;
+            obj.returnLoginStatus(loginResult);
+        }
     }
 }

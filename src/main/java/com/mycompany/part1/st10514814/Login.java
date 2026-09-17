@@ -95,4 +95,33 @@ public class Login {
         System.out.println(result);
         return result;
     }
+        public boolean loginUser(String name, String surname, String username, String password, String enteredUser, String enteredPassword) {
+
+        boolean login;
+        String result;
+
+        if (enteredUser.equals(username) && enteredPassword.equals(password)) {
+            login = true;
+            result = "Welcome " + name + " " + surname + ". It is great to see you again.";
+        } else {
+            login = false;
+            result = "Username or password incorrect, please try again.";
+        }
+
+        System.out.println(result);
+        return login;
+    }
+
+    public String returnLoginStatus(boolean loginResult) {
+        String status;
+
+        if (loginResult) {
+            status = "A successful login";
+        } else {
+            status = "A failed login";
+        }
+
+        System.out.println(status);
+        return status;
+    }
 }

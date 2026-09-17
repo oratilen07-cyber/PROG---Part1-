@@ -145,5 +145,37 @@ public class LoginTest {
         assertEquals(expected, actual);
         assertFalse(obj.checkCellPhoneNumber(cellNumberTest));
     }
+    /**
+     * Test of login method, of class Login.
+     */
+    @Test
+    public void testLoginSuccessful() {
+        String name = "";
+        String surname = "";
+        String user = "kyle_";
+        String password = "PassWord123!";
+        String cellNumber = "";
+        String enteredUser = "kyle_";
+        String enteredPass = "PassWord123!";
 
+        Login obj = new Login(name, surname, user, password, cellNumber);
+
+        assertTrue(obj.loginUser(name, surname, user, password, enteredUser, enteredPass));
+    }
+
+    @Test
+    public void testLoginFailed() {
+        String name = "";
+        String surname = "";
+        String user = "kyle!!!!!";
+        String password = "password";
+        String cellNumber = "";
+        String enteredUser = "klyuop";
+        String enteredPass = "password123";
+        
+        Login obj = new Login(name, surname, user, password, cellNumber);
+        
+        assertFalse(obj.loginUser(name, surname, user, password, enteredUser, enteredPass));
+
+    }
 }
