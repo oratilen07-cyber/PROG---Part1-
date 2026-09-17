@@ -13,38 +13,50 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
-        System.out.println("Enter your name");
+        //Registration: collects name, surname, username, password and cell pohne number
+        System.out.println("==========================================");
+        System.out.println("Resgistration");
+        System.out.println("==========================================");
+        
+        System.out.println("Enter your name: ");
         String name = input.nextLine();
 
-        System.out.println("Enter your surname");
+        System.out.println("Enter your surname: ");
         String surname = input.nextLine();
 
-        System.out.println("Enter your username");
+        System.out.println("Enter your username: ");
         String user = input.nextLine();
 
-        System.out.println("Enter your password");
+        System.out.println("Enter your password: ");
         String password = input.nextLine();
 
-        System.out.println("Enter your South African phone number");
+        System.out.println("Enter your South African phone number: ");
         String cellNumber = input.nextLine();
+        
+        System.out.println("==========================================");
 
         Login obj = new Login(name, surname, user, password, cellNumber);
         
-        obj.registerUser(user, password);
-
         String result = obj.registerUser(user, password);
       
         String enteredUser;
         String enteredPass;
         boolean loginResult;
-
-        if (result.matches("The two above conditions have been met, and the user has been registered successfully\n")) {
-            System.out.println("Enter your username to login");
+        
+        //Login : after users enters credentials, system verifies against registration data  
+        if (result.matches("The two above conditions have been met, and the user has been registered successfully")) {
+            
+            System.out.println("==========================================");
+            System.out.println("Login");
+            System.out.println("==========================================");
+            
+            System.out.println("Re-enter your username to login: ");
             enteredUser = input.nextLine();
 
-            System.out.println("Enter your password to login");
+            System.out.println("Re-enter your password to login: ");
             enteredPass = input.nextLine();
+            
+            System.out.println("==========================================");
             loginResult = obj.loginUser(name, surname, user, password, enteredUser, enteredPass);
 
             obj.returnLoginStatus(loginResult);
@@ -54,3 +66,10 @@ public class Main {
         }
     }
 }
+/*
+References:
+Stack Overflow (2010) ‘Validate South Africa cell phone number’, Stack Overflow. Available at: Stack Overflow (Accessed: 17 September 2026).
+Stack Overflow (2013) ‘Regex for password must contain at least eight characters, at least one number and both lower and uppercase letters 
+and special characters’, Stack Overflow. Available at: Stack Overflow (Accessed: 17 September 2026).
+Farrell, J. (2022) Java Programming. 10th edn. Boston, MA: Cengage Learning.
+*/

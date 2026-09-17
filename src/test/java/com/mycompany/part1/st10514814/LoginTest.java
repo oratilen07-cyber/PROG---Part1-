@@ -40,6 +40,7 @@ public class LoginTest {
      * Test of checkUserName method, of class Login.
      */
     @Test
+    // testCheckUserNameCorrect: verifies valid username (contains underscore, ≤ 5 chars)
     public void testCheckUserNameCorrect() {
         String name = "";
         String surname = "";
@@ -57,6 +58,7 @@ public class LoginTest {
     }
 
     @Test
+    // testCheckUserNameIncorrect: verifies rejection of invalid usernames
     public void testCheckUserNameIncorrect() {
         String name = "";
         String surname = "";
@@ -77,6 +79,7 @@ public class LoginTest {
      * Test of checkPaswordComplexity method, of class Login.
      */
     @Test
+    // testCheckPasswordComplexityCorrect: validates password meeting all complexity requirements
     public void testCheckPaswordComplexityCorrect() {
         String name = "";
         String surname = "";
@@ -93,6 +96,7 @@ public class LoginTest {
     }
 
     @Test
+    // testCheckPasswordComplexityIncorrect: ensures weak passwords are rejected 
     public void testCheckPaswordComplexityIncorrect() {
         String name = "";
         String surname = "";
@@ -113,6 +117,7 @@ public class LoginTest {
      * Test of checkCellPhoneNumber method, of class Login.
      */
     @Test
+    //testCheckCellPhoneNumberCorrect: validates that cellphone number is correctly formatted(+27XXXXXXXXX)
     public void testCheckCellPhoneNumberCorrect() {
         String name = "";
         String surname = "";
@@ -130,6 +135,7 @@ public class LoginTest {
     }
 
     @Test
+    //testCheckCellPhoneNumberCorrect: ensures that incorrectly formatted cellphone number is rejected
     public void testCheckCellPhoneNumberIncorrect() {
         String name = "";
         String surname = "";
@@ -149,6 +155,7 @@ public class LoginTest {
      * Test of login method, of class Login.
      */
     @Test
+    // testLoginSuccessful: verifies authentication when credentials match registration data
     public void testLoginSuccessful() {
         String name = "";
         String surname = "";
@@ -164,6 +171,7 @@ public class LoginTest {
     }
 
     @Test
+    // testLoginFailed: ensures login fails with incorrect credentials
     public void testLoginFailed() {
         String name = "";
         String surname = "";
