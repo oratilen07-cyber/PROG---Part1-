@@ -37,7 +37,7 @@ public class Main {
 
         Login obj = new Login(name, surname, user, password, cellNumber);
         
-        String result = obj.registerUser(user, password);
+        String result = obj.registerUser(user, password, cellNumber);
       
         String enteredUser;
         String enteredPass;
@@ -69,7 +69,9 @@ public class Main {
 /*
 References:
 Stack Overflow (2010) ‘Validate South Africa cell phone number’, Stack Overflow. Available at: Stack Overflow (Accessed: 17 September 2026).
+https://stackoverflow.com/questions/4058001/validate-south-africa-cell-phone-number
 Stack Overflow (2013) ‘Regex for password must contain at least eight characters, at least one number and both lower and uppercase letters 
 and special characters’, Stack Overflow. Available at: Stack Overflow (Accessed: 17 September 2026).
+https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
 Farrell, J. (2022) Java Programming. 10th edn. Boston, MA: Cengage Learning.
 */
