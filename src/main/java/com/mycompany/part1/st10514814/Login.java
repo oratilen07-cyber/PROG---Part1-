@@ -98,7 +98,7 @@ public class Login {
         } else if (!checkPaswordComplexity(password)) {
             result = "The password does not meet the complexity requirements";
         } else if(!checkCellPhoneNumber(cellnumber)){
-            result = "The cell phone number us correctly formatted or doesn't contain international code";
+            result = "The cell phone number is incorrectly formatted or doesn't contain international code";
         } else {
             result = "The three above conditions have been met, "
                     + "and the user has been registered successfully";

@@ -44,7 +44,7 @@ public class Main {
         boolean loginResult;
         
         //Login : after users enters credentials, system verifies against registration data  
-        if (result.matches("The two above conditions have been met, and the user has been registered successfully")) {
+        if (result.matches("The three above conditions have been met, and the user has been registered successfully")) {
             
             System.out.println("==========================================");
             System.out.println("Login");
