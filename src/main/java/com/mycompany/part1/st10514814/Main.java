@@ -62,10 +62,10 @@ public class Main {
             obj.returnLoginStatus(loginResult);
         } else {
             loginResult = false;
-            obj.returnLoginStatus(loginResult);
+            obj.returnLoginStatus(loginResult);              
         }
     }
-}
+}   
 /*
 References:
 Stack Overflow (2010) ‘Validate South Africa cell phone number’, Stack Overflow. Available at: Stack Overflow (Accessed: 17 September 2026).
