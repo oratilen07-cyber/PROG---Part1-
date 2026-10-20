@@ -40,7 +40,7 @@ public class Login {
             checkUser = false;
         }
 
-         System.out.println(result);
+        System.out.println(result);
         return checkUser;
 
     }
@@ -97,7 +97,7 @@ public class Login {
             result = "The username is incorrectly formatted";
         } else if (!checkPaswordComplexity(password)) {
             result = "The password does not meet the complexity requirements";
-        } else if(!checkCellPhoneNumber(cellnumber)){
+        } else if (!checkCellPhoneNumber(cellnumber)) {
             result = "The cell phone number is incorrectly formatted or doesn't contain international code";
         } else {
             result = "The three above conditions have been met, "
@@ -109,7 +109,7 @@ public class Login {
     }
 
 // Authenticates user credentials against registered username/password
-    public boolean loginUser(String name, String surname, String username, String password, String enteredUser, String enteredPassword) {
+    public static boolean loginUser(String name, String surname, String username, String password, String enteredUser, String enteredPassword) {
 
         boolean login;
         String result;
